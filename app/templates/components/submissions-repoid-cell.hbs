@@ -1,20 +1,18 @@
-<div style="min-width:150px">
-  {{#each displayIds as |idInfo index|}}
-    {{if index ', '}}
+{{#each displayIds as |idInfo index|}}
+  <ul class="repoid-cell">
     {{#if idInfo.url}}
-      <ul class="repoid-cell">
-        {{#each idInfo.ids as |id|}}
-          <a href="{{url}}" target="_blank">
-            <li title="{{id.title}}">{{id.display}}</li>
-          </a>
-        {{/each}}
+      {{#each idInfo.ids as |id|}}
+        <a href="{{idInfo.url}}" target="_blank">
+          <li title="{{id.title}}">{{id.display}}</li>
+        </a>
+      {{/each}}
       </ul>
     {{else}}
       {{#each idInfo.ids as |id|}}
         <li title="{{id.title}}">{{id.display}}</li>
       {{/each}}
-    {{/if}}
-  {{else}}
-    <span class="nodata-placeholder">Not available</span>
-  {{/each}}
-</div>
+    </ul>
+  {{/if}}
+{{else}}
+  <span class="nodata-placeholder">Not available</span>
+{{/each}}

@@ -24,6 +24,20 @@ export default Component.extend({
     }
   },
 
+  /**
+   * Formatted:
+   *  [
+   *    {
+   *      url: '',
+   *      ids: [
+   *        {
+   *          title: 'href-worthy-id',
+   *          display: 'somewhat-more-human-readable'
+   *        }
+   *      ]
+   *    }
+   *  ]
+   */
   displayIds: Ember.computed('repoCopies', function () {
     const rc = this.get('repoCopies');
     if (!rc) {
